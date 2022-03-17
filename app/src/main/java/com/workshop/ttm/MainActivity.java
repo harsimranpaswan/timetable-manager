@@ -1,9 +1,6 @@
 package com.workshop.ttm;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
@@ -25,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        tablayout = findViewById(R.id.tablayout);
+        tablayout = findViewById(R.id.tabLayout);
         viewPager2 = findViewById(R.id.viewPager2);
         adap=new FragmentAdapter(this);
 
