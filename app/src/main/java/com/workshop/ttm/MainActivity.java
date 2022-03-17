@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tablayout;
     ViewPager2 viewPager2;
     FragmentAdapter adap;
-    private String[] title= new String[]{"Tasks","Postponed","Add new task","Status","Settings"};
+    private String[] title= new String[]{"Tasks","Postponed","+","Status","Settings"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager2.setAdapter(adap);
 
-       //new TabLayoutMediator(tablayout, viewPager2, ((tab, position) -> tab.setText(title[position]))).attach();
+       new TabLayoutMediator(tablayout, viewPager2, ((tab, position) -> tab.setText(title[position]))).attach();
     }
 }
