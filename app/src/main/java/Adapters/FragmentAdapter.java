@@ -1,4 +1,4 @@
-package com.workshop.ttm;
+package Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -7,6 +7,12 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.workshop.ttm.addtask;
+import com.workshop.ttm.postponed;
+import com.workshop.ttm.settings;
+import com.workshop.ttm.status;
+import com.workshop.ttm.tasks;
 
 import java.util.ArrayList;
 
