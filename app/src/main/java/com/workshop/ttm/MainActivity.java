@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tablayout;
     ViewPager2 viewPager2;
     FragmentAdapter adap;
-    private String[] title= new String[]{"Tasks","Postponed","+","Status","Settings"};
+    private String[] title= new String[]{"Tasks","Postponed","+","Status","Profile"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
