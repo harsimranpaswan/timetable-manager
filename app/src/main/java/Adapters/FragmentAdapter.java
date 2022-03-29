@@ -1,20 +1,15 @@
 package Adapters;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.workshop.ttm.addtask;
-import com.workshop.ttm.postponed;
-import com.workshop.ttm.settings;
-import com.workshop.ttm.status;
-import com.workshop.ttm.tasks;
-
-import java.util.ArrayList;
+import com.workshop.ttm.AddTask;
+import com.workshop.ttm.Postponed;
+import com.workshop.ttm.Settings;
+import com.workshop.ttm.Status;
+import com.workshop.ttm.Tasks;
 
 public class FragmentAdapter extends FragmentStateAdapter {
 
@@ -27,13 +22,13 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            case 0: return new tasks();
-            case 1: return new postponed();
-            case 2: return new addtask();
-            case 3: return new status();
-            case 4: return new settings();
+            case 0: return new Tasks();
+            case 1: return new Postponed();
+            case 2: return new AddTask();
+            case 3: return new Status();
+            case 4: return new Settings();
         }
-        return new tasks();
+        return new Tasks();
     }
 
     @Override

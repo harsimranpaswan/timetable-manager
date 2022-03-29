@@ -18,8 +18,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class signup extends AppCompatActivity {
-    Button reg_button;
+public class SignUp extends AppCompatActivity {
+    Button reg_signup;
     EditText reg_name;
     EditText reg_age;
     EditText reg_mail;
@@ -37,11 +37,12 @@ public class signup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
-        reg_button= findViewById(R.id.reg_button);
+        progressDialog= new ProgressDialog(this);
+        reg_signup= findViewById(R.id.reg_signup);
         reg_name= findViewById(R.id.reg_name);
         reg_age= findViewById(R.id.reg_age);
-        reg_mail= findViewById(R.id.reg_mail);
-        reg_pass= findViewById(R.id.reg_pass);
+        reg_mail= findViewById(R.id.log_mail);
+        reg_pass= findViewById(R.id.log_pass);
         reg_cnfpass= findViewById(R.id.reg_cnfpass);
         reg_signin= findViewById(R.id.reg_signin);
 
@@ -51,11 +52,11 @@ public class signup extends AppCompatActivity {
         reg_signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(signup.this, signin.class));
+                startActivity(new Intent(SignUp.this, SignIn.class));
             }
         });
 
-        reg_button.setOnClickListener(new View.OnClickListener() {
+        reg_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 reg_method();
@@ -70,13 +71,16 @@ public class signup extends AppCompatActivity {
         String pass=reg_pass.getText().toString();
         String cnfpass=reg_cnfpass.getText().toString();
 
-        if(mail.matches(mail_verify)){
+        if (name.isEmpty()){
+            reg_name.setError("Please enter Name");
+        }
+        else if(!mail.matches(mail_verify)){
             reg_mail.setError("Please enter valid email address");
         }
         else if (pass.isEmpty() || pass.length()<8){
             reg_pass.setError("Password must contain atleast 8 letters");
         }
-        else if(cnfpass.equals(pass)) {
+        else if(!cnfpass.equals(pass)) {
             reg_cnfpass.setError("Passwords do not match");
         }
         else{
@@ -95,14 +99,14 @@ public class signup extends AppCompatActivity {
                     }
                     else{
                         progressDialog.dismiss();
-                        Toast.makeText(signup.this, "An Error Occured", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignUp.this, "An Error Occured", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
         }
     }
     private void enterapp(){
-        Intent intent= new Intent(signup.this,MainActivity.class);
+        Intent intent= new Intent(this,MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
