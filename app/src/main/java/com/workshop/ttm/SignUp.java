@@ -28,7 +28,6 @@ public class SignUp extends AppCompatActivity {
     TextView reg_signin;
     ProgressDialog progressDialog;
     String mail_verify="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-
     FirebaseAuth auth;
     FirebaseUser user;
 

@@ -31,8 +31,8 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="+"/>
-            //app:srcCompat="@android:drawable/ic_input_add"
+            android:text="+" />
+        //app:srcCompat="@android:drawable/ic_input_add"
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/tabItem"

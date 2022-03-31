@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,11 +57,10 @@ public class SignIn extends AppCompatActivity{
                 startActivity(new Intent(SignIn.this, SignUp.class));
             }
         });
-//        log_forgot.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(SignIn.this, ForgotPass.class));
-//            }
+//       log_forgot.setOnClickListener(new View.OnClickListener() {
+//           @Override
+//           public void onClick(View v) { startActivity(new Intent(SignIn.this, ForgotPass.class)); }
+//        });
     }
 
 
