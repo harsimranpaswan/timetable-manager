@@ -39,6 +39,7 @@ public class SignIn extends AppCompatActivity{
         log_signin=findViewById(R.id.reg_signup);
         log_pass=findViewById(R.id.log_pass);
         log_mail=findViewById(R.id.log_mail);
+        log_forgot=findViewById(R.id.log_forgot);
         progressDialog= new ProgressDialog(this);
 
         auth= FirebaseAuth.getInstance();
@@ -57,10 +58,10 @@ public class SignIn extends AppCompatActivity{
                 startActivity(new Intent(SignIn.this, SignUp.class));
             }
         });
-//       log_forgot.setOnClickListener(new View.OnClickListener() {
-//           @Override
-//           public void onClick(View v) { startActivity(new Intent(SignIn.this, ForgotPass.class)); }
-//        });
+       log_forgot.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) { startActivity(new Intent(SignIn.this, ForgotPass.class)); }
+        });
     }
 
 

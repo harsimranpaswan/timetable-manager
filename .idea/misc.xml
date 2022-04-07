@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/drawable/bg_grad.xml" value="0.1" />
+        <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.144" />
+        <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1715" />
         <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/drawable/ic_launcher_background.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/drawable/round_button.xml" value="0.148" />
         <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/font/.xml" value="0.28125" />
         <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/harry/AndroidStudioProjects/TimetableManager/app/src/main/res/layout/activity_main2.xml" value="0.25104166666666666" />

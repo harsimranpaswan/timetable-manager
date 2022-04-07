@@ -43,7 +43,6 @@ public class Tasks extends Fragment {
 
     }
     private void initRecyclerView(){
-
     }
 
 }
