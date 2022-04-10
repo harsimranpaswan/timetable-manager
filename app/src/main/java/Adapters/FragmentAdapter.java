@@ -7,6 +7,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.workshop.ttm.AddTask;
 import com.workshop.ttm.Postponed;
+import com.workshop.ttm.Profile;
 import com.workshop.ttm.Settings;
 import com.workshop.ttm.Status;
 import com.workshop.ttm.Tasks;
@@ -26,7 +27,7 @@ public class FragmentAdapter extends FragmentStateAdapter {
             case 1: return new Postponed();
             case 2: return new AddTask();
             case 3: return new Status();
-            case 4: return new Settings();
+            case 4: return new Profile();
         }
         return new Tasks();
     }

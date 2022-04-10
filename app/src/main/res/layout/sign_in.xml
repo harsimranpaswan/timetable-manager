@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="415dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_width="371dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/julius_sans_one"
         android:text="SignIn"
         android:textAlignment="center"
@@ -27,7 +25,7 @@
         android:id="@+id/log_mail"
         android:layout_width="372dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="284dp"
+        android:layout_marginTop="304dp"
         android:background="@drawable/round_button"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:ems="10"
@@ -38,21 +36,6 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/log_forgot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Forgot?"
-        android:textAlignment="textStart"
-        android:textColor="#03A9F4"
-        android:textSize="19sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/log_pass" />
 
     <TextView
         android:id="@+id/textView7"
@@ -67,11 +50,28 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/log_signup"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/log_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="204dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Signup"
+        android:textAlignment="textStart"
+        android:textColor="#03A9F4"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@+id/reg_signup" />
+
     <EditText
         android:id="@+id/log_pass"
         android:layout_width="372dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/round_button"
         android:drawableLeft="@drawable/ic_baseline_lock_24"
         android:ems="10"
@@ -83,79 +83,89 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log_mail" />
 
-    <TextView
-        android:id="@+id/log_signup"
+    <Button
+        android:id="@+id/reg_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-
-        android:layout_marginEnd="204dp"
-        android:fontFamily="sans-serif-light"
-        android:text="Signup"
-        android:textAlignment="textStart"
-        android:textColor="#03A9F4"
-        android:textSize="19sp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/round_button"
+        android:text="SIGNIN"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log_forgot" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="364dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/julius_sans_one"
         android:text="OR CONTINUE USING"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/log_google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/log_google"
-        android:layout_width="57dp"
-        android:layout_height="36dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/round_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/log_fb"
-        app:layout_constraintHorizontal_bias="0.764"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_signup"
-        app:layout_constraintVertical_bias="0.66"
-        app:srcCompat="@drawable/googleg_standard_color_18" />
+        app:layout_constraintTop_toBottomOf="@+id/log_signup" />
 
     <ImageButton
         android:id="@+id/log_fb"
-        android:layout_width="57dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="133dp"
         android:background="@drawable/round_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.703"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reg_signup"
-        app:layout_constraintVertical_bias="0.66"
-        app:srcCompat="@drawable/googleg_disabled_color_18"
+        app:layout_constraintStart_toEndOf="@+id/log_google"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/facebook48"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/reg_signup"
+    <ImageButton
+        android:id="@+id/log_google"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="129dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/round_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/log_fb"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/googleg_standard_color_18" />
+
+    <TextView
+        android:id="@+id/log_forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/round_button"
-        android:text="SIGNIN"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Forgot?"
+        android:textAlignment="textStart"
+        android:textColor="#03A9F4"
+        android:textSize="19sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/log_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/log_pass" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="155dp"
+        android:layout_height="149dp"
+        app:layout_constraintBottom_toTopOf="@+id/log_mail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.515"
+        app:srcCompat="@drawable/tp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
