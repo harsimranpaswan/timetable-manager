@@ -8,7 +8,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import com.workshop.ttm.AddTask;
 import com.workshop.ttm.Postponed;
 import com.workshop.ttm.Profile;
-import com.workshop.ttm.Settings;
 import com.workshop.ttm.Status;
 import com.workshop.ttm.Tasks;
 

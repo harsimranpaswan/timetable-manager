@@ -41,7 +41,7 @@
                     android:layout_weight="1"
                     android:singleLine="true"
                     android:textColor="@android:color/black"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     tools:text="Task 1" />
 
                 <TextView
@@ -70,13 +70,13 @@
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
+                android:layout_height="4sp"
+                android:background="@drawable/round_button"
                 android:foreground="@color/teal_200"
                 android:progress="100" />
-                app:
 
         </LinearLayout>
+
 
         <ImageView
             android:id="@+id/options"

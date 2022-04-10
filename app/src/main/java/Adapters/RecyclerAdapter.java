@@ -42,22 +42,22 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tasktitle;
-        private TextView taskdesc;
-        private TextView tasktime;
+        private TextView titl;
+        private TextView desc;
+        private TextView tim;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tasktitle=itemView.findViewById(R.id.tasktitle);
-            taskdesc=itemView.findViewById(R.id.taskdesc);
-            tasktime=itemView.findViewById(R.id.tasktime);
+            titl=itemView.findViewById(R.id.tasktitle);
+            desc=itemView.findViewById(R.id.taskdesc);
+            tim=itemView.findViewById(R.id.tasktime);
         }
 
         public void setItem(String title, String description, String time) {
-            tasktitle.setText(title);
-            taskdesc.setText(description);
-            tasktime.setText(time);
+            titl.setText(title);
+            desc.setText(description);
+            tim.setText(time);
         }
     }
 }

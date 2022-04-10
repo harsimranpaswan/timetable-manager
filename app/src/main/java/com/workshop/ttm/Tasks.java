@@ -2,7 +2,6 @@ package com.workshop.ttm;
 
 import android.os.Bundle;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,19 +14,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Adapters.ModelClass;
-import Adapters.RecyclerAdapter;
+import Adapters.NewAdapter;
 
 public class Tasks extends Fragment {
     RecyclerView tasksRecycler;
-    ConstraintLayout conLayout;
     List<ModelClass>taskList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        ConstraintLayout rootView=(ConstraintLayout) inflater.inflate(R.layout.fragment_tasks, container, false);
-        RecyclerView tasksRecycler= (RecyclerView) rootView.findViewById(R.id.tasksRecycler);
+        View rootView= inflater.inflate(R.layout.fragment_tasks, container, false);
+        tasksRecycler= rootView.findViewById(R.id.tasksRecycler);
+        tasksRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
         initData();
         initRecyclerView();
@@ -43,6 +43,7 @@ public class Tasks extends Fragment {
 
     }
     private void initRecyclerView(){
+        tasksRecycler.setAdapter(new NewAdapter((ArrayList<ModelClass>) taskList));
     }
 
 }
