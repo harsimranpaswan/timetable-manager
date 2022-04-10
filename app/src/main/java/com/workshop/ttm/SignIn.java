@@ -62,6 +62,11 @@ public class SignIn extends AppCompatActivity{
            @Override
            public void onClick(View v) { startActivity(new Intent(SignIn.this, ForgotPass.class)); }
         });
+
+       if(auth.getCurrentUser()!=null){
+           Intent intent= new Intent(this,MainActivity.class);
+           startActivity(intent);
+       }
     }
 
 

@@ -13,10 +13,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
     Button reg_signup;
@@ -30,6 +36,7 @@ public class SignUp extends AppCompatActivity {
     String mail_verify="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     FirebaseAuth auth;
     FirebaseUser user;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,7 @@ public class SignUp extends AppCompatActivity {
 
         auth=FirebaseAuth.getInstance();
         user=auth.getCurrentUser();
+        db=FirebaseFirestore.getInstance();
 
         reg_signin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +67,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 reg_method();
+                fire_method();
             }
         });
     }
@@ -104,6 +113,27 @@ public class SignUp extends AppCompatActivity {
             });
         }
     }
+
+    private void fire_method(){
+        String name=reg_name.getText().toString();
+        String age=reg_age.getText().toString();
+        String mail=reg_mail.getText().toString();
+        String pass=reg_pass.getText().toString();
+
+        Map<String, Object> user= new HashMap<>();
+        user.put("Name", name);
+        user.put("Age", age);
+        user.put("Mail", mail);
+        user.put("Password", pass);
+
+        db.collection("user").add(user).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(SignUp.this, "User Registered Successfully", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     private void enterapp(){
         Intent intent= new Intent(this,MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
