@@ -8,7 +8,7 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
-import Adapters.FragmentAdapter;
+import com.workshop.ttm.Adapters.FragmentAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

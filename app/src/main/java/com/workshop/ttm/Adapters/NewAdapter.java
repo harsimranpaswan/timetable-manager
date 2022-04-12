@@ -1,4 +1,4 @@
-package Adapters;
+package com.workshop.ttm.Adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,4 +1,4 @@
-package Adapters;
+package com.workshop.ttm.Adapters;
 
 public class ModelClass {
     String title;

@@ -1,4 +1,4 @@
-package Adapters;
+package com.workshop.ttm.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

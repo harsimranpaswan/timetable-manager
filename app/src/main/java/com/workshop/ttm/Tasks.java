@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import Adapters.ModelClass;
-import Adapters.NewAdapter;
+import com.workshop.ttm.Adapters.ModelClass;
+import com.workshop.ttm.Adapters.NewAdapter;
 
 public class Tasks extends Fragment {
     RecyclerView tasksRecycler;
