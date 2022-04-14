@@ -11,9 +11,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-//@Database(entities={TaskDB.class}, version=1)
+@Database(entities={TaskDB.class}, version=1, exportSchema = false)
 public abstract class AppDB extends RoomDatabase {
-    //public abstract TaskDao taskDao();
     public static final int NUMBER_OF_THREADS=4;
     private static volatile AppDB INSTANCE;
     public static final ExecutorService dbExecutor= Executors.newFixedThreadPool(NUMBER_OF_THREADS);
@@ -23,10 +22,12 @@ public abstract class AppDB extends RoomDatabase {
                 public void onCreate(@NonNull SupportSQLiteDatabase db) {
                     super.onCreate(db);
                     dbExecutor.execute(()->{
-
+                        TaskDao taskDao=INSTANCE.taskDao();
+                        taskDao.deleteAll();
                     });
                 }
             };
+    public TaskDao taskDao;
 
     public static AppDB getDatabase(final Context context){
         if(INSTANCE==null){
