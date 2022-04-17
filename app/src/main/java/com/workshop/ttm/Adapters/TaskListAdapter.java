@@ -11,15 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.api.Context;
 import com.workshop.ttm.NewRoomDB.TaskDB;
 import com.workshop.ttm.R;
+import com.workshop.ttm.Tasks;
 
 import java.util.List;
 
 public class TaskListAdapter extends RecyclerView.Adapter<TaskListAdapter.MyViewHolder> {
 
-    private Context context;
+    public Context context;
     private List<TaskDB> taskDBList;
-    public TaskListAdapter(Context context){this.context=context;}
-
+    public TaskListAdapter(){this.context=context;}
 
     public void setTaskDBList(List<TaskDB> taskDBList){
         this.taskDBList=taskDBList;

@@ -1,5 +1,6 @@
 package com.workshop.ttm;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,24 +25,27 @@ import com.workshop.ttm.NewRoomDB.TaskDao;
 public class Tasks extends Fragment {
     RecyclerView tasksRecycler;
     private TaskListAdapter taskListAdapter;
-    private Context context;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_tasks, container, false);
-        tasksRecycler= rootView.findViewById(R.id.tasksRecycler);
+        tasksRecycler=rootView.findViewById(R.id.tasksRecycler);
         tasksRecycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
-
-        taskListAdapter=new TaskListAdapter(this);
+        taskListAdapter=new TaskListAdapter();
         tasksRecycler.setAdapter(taskListAdapter);
-
-      //  initData();
-      //  initRecyclerView();
+        LoadTaskList();
         return rootView;
+
     }
-/*
+
+    private void LoadTaskList(){
+        AppDB db= AppDB.getDbInstance(this.getContext());
+        List<TaskDB> taskDBList=db.taskDao.getAllTasks();
+        taskListAdapter.setTaskDBList(taskDBList);
+    }
+    /*
     private void initData() {
         taskList=new ArrayList<>();
         taskList.add(new ModelClass("CyberLabs Mid Evaluation","Attend the CyberLabs Mid Evaluation at SAC 112", "18:30"));
@@ -49,17 +53,5 @@ public class Tasks extends Fragment {
       // taskList.add(new ModelClass("CyberLabs Mid Evaluation","Attend the CyberLabs Mid Evaluation at SAC 112", "18:30"));
     }
 
-
-    private void initRecyclerView(){
-      // RecyclerView tasksRecycler=rootView.findViewById(R.id.tasksRecycler);
-      // tasksRecycler.setLayoutManager(new LinearLayoutManager(this));
-
-
-    }
 */
-    private void LoadTaskList(){
-        AppDB db= AppDB.getDbInstance(this.getContext());
-        List<TaskDB> taskDBList=db.taskDao.getAllTasks();
-        taskListAdapter.setTaskDBList(taskDBList);
-    }
 }
