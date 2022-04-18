@@ -1,49 +1,44 @@
 package com.workshop.ttm;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LifecycleOwner;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.workshop.ttm.RoomDatabase.TaskDatabase;
+import com.workshop.ttm.RoomDatabase.Task;
+import com.workshop.ttm.RoomDatabase.TasksViewModel;
+
 import java.util.List;
-
-import com.workshop.ttm.Adapters.ModelClass;
-import com.workshop.ttm.Adapters.NewAdapter;
 
 public class Tasks extends Fragment {
     RecyclerView tasksRecycler;
-    List<ModelClass>taskList;
+    TasksViewModel tasksViewModel;
 
-    @Override
+     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_tasks, container, false);
-        tasksRecycler= rootView.findViewById(R.id.tasksRecycler);
-        tasksRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        tasksRecycler=rootView.findViewById(R.id.tasksRecycler);
 
-
-        initData();
-        initRecyclerView();
-
-        return rootView;
+         tasksViewModel = ViewModelProviders.of(this).get(TasksViewModel.class);
+         tasksViewModel.getAllTasks().observe((LifecycleOwner) this.getContext(), new Observer<List<Task>>() {
+             @Override
+             public void onChanged(@Nullable List<Task> Tasks) {
+                 //update RecyclerView
+               Toast.makeText(getContext(), "onChanged", Toast.LENGTH_SHORT).show();
+             }
+         });
+         return rootView;
     }
-
-    private void initData() {
-        taskList=new ArrayList<>();
-        taskList.add(new ModelClass("CyberLabs Mid Evaluation","Attend the CyberLabs Mid Evaluation at SAC 112", "18:30"));
-        taskList.add(new ModelClass("Wash Clothes","Some pants and shirts", "20:00"));
-      // taskList.add(new ModelClass("CyberLabs Mid Evaluation","Attend the CyberLabs Mid Evaluation at SAC 112", "18:30"));
-
-    }
-    private void initRecyclerView(){
-        tasksRecycler.setAdapter(new NewAdapter((ArrayList<ModelClass>) taskList));
-    }
-
 }

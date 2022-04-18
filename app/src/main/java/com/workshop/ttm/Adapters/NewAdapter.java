@@ -28,9 +28,9 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.myViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-    holder.title.setText(dataHolder.get(position).getTitle());
-    holder.description.setText(dataHolder.get(position).getDescription());
-    holder.time.setText(dataHolder.get(position).getTime());
+    holder.tasktitle.setText(dataHolder.get(position).getTitle());
+    holder.taskdesc.setText(dataHolder.get(position).getDescription());
+    holder.tasktime.setText(dataHolder.get(position).getTime());
     }
 
     @Override
@@ -39,13 +39,13 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.myViewHolder>{
     }
 
     class myViewHolder extends RecyclerView.ViewHolder{
-        TextView title,description,time;
+        TextView tasktitle,taskdesc,tasktime;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            title= itemView.findViewById(R.id.tasktitle);
-            description=itemView.findViewById(R.id.taskdesc);
-            time=itemView.findViewById(R.id.tasktime);
+            tasktitle= itemView.findViewById(R.id.tasktitle);
+            taskdesc=itemView.findViewById(R.id.taskdesc);
+            tasktime=itemView.findViewById(R.id.tasktime);
         }
     }
 }

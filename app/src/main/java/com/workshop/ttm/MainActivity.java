@@ -1,13 +1,13 @@
 package com.workshop.ttm;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager2.widget.ViewPager2;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
 import com.workshop.ttm.Adapters.FragmentAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -32,4 +32,5 @@ public class MainActivity extends AppCompatActivity {
 
        new TabLayoutMediator(tablayout, viewPager2, ((tab, position) -> tab.setText(title[position]))).attach();
     }
+
 }
